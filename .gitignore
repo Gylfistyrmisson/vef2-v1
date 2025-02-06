@@ -1,5 +1,3 @@
-dist/CSS.html
-dist/HTML.html
-dist/index.html
-dist/JavaScript.html
+dist/*
+!dist/
 node_modules/
