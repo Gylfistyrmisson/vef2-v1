@@ -6,7 +6,6 @@ async function readJson(filePath) {
         const data = await fs.readFile(path.resolve(filePath),'utf-8');
         return JSON.parse(data);
     } catch (error) {
-        console.error(`Could not read ${filePath}`,error.message);
         return null;
     };
     
@@ -22,7 +21,6 @@ async function readIndex() {
     const parsedData = JSON.parse(data);
 
     if (!Array.isArray(parsedData)){
-        console.error('Index.json is not array, could not process');
         return [];
     }
 
