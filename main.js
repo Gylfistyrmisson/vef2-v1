@@ -29,7 +29,6 @@ async function readIndex() {
     return parsedData;
 
   } catch(error) {
-    console.error(`Could not read ${indexPath}`, error.message);
     return []
   }
 }
@@ -57,6 +56,7 @@ async function readAll() {
           console.error('Error reading or parsing the file:', error);
         }  
 }
+
 /* Skrifaðu þetta function sjálfur en lenti alltaf í veseni með að HTML og CSS spurningarnar voru þýddar sem kóði frekar en texti, chatGPT hjálpaði að laga*/
 
 function createHtmlFiles(htmlFile) {
@@ -132,7 +132,6 @@ function createHtmlFiles(htmlFile) {
   
 }
 
-// Helper function to escape HTML characters
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
