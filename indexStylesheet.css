@@ -1,0 +1,85 @@
+/* Við chatGPT áttum gott samtal og ég bað um að fá color og setja þetta í flexbox, fékk þetta stylesheet og lagaði nokkra hluti */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Light grey background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  h1 {
+    font-size: 2.5rem;
+    color: #34495e; /* Dark grey color for text */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  /* Navigation Menu Styling */
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Navigation Links */
+  li {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #3498db; /* Blue background for buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for a floating look */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for smooth effects */
+  }
+  
+  li:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
+  /* Links inside list items */
+  a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  li:hover a {
+    color: #ecf0f1; /* Slightly lighter color on hover */
+  }
+  
+  /* Optional: Styling for the list item when clicked */
+  a:active {
+    color: #e74c3c; /* Change link color to red when clicked */
+  }
+  
+  /* Flex container for centering content */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+  }
+  

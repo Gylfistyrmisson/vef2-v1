@@ -1,0 +1,132 @@
+/* General body and layout styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;  /* Keep content in a column */
+    align-items: center;
+    justify-content: flex-start; /* Adjust content to the top for better spacing */
+    height: 100vh;
+    text-align: center;
+}
+
+/* Enhanced h1 styling for a more attractive headline */
+h1 {
+    color: #fff;
+    background-color: #3498db; /* Bright blue background */
+    padding: 20px 30px;
+    font-size: 3rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    margin-bottom: 20px;
+    max-width: 90%;  /* Ensure the title doesn't stretch too wide */
+    word-wrap: break-word; /* Prevents the title from overflowing */
+}
+
+/* Adjust the h1 behavior when hovering */
+h1:hover {
+    background-color: #2980b9; /* Slightly darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Flex container for questions */
+.question {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.question p {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+/* Styling for the labels */
+.answer label {
+    display: block;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.answer label:hover {
+    color: #3498db;
+}
+
+/* The "Svara" button styles */
+button.svara-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button.svara-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Button colors based on answer correctness */
+button.correct {
+    background-color: #2ecc71;
+}
+
+button.incorrect {
+    background-color: #e74c3c;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Optional styling for the form to give it some space */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Adding some spacing to the result paragraph */
+#result {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* Make form elements and questions more interactive */
+input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #3498db;
+}
+
+input[type="radio"]:not(:checked) + label {
+    transition: color 0.3s ease;
+}
+
+/* Flexbox container for answer choices */
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
