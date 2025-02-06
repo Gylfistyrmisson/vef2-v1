@@ -183,7 +183,20 @@ async function createIndex(indexJson) {
       });
 }
 
+/* ChatGPT gerði þetta function */
+
+async function createDist(dirPath) {
+  try {
+    // Create the directory (will throw if it already exists)
+    await fs.mkdir(dirPath, { recursive: true });
+    console.log(`Directory "${dirPath}" created successfully.`);
+  } catch (error) {
+    console.error(`Error creating directory: ${error.message}`);
+  }
+}
+
 async function main(){
+    await createDist('./dist')
     const jsonCollection = await readAll();
     createIndex(jsonCollection);
 }
