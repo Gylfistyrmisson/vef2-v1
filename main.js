@@ -2,14 +2,15 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 
 async function readJson(filePath) {
-    try {
-        const data = await fs.readFile(path.resolve(filePath),'utf-8');
-        return JSON.parse(data);
-    } catch (error) {
-        return null;
-    };
-    
+  try {
+      const data = await fs.readFile(path.resolve(filePath), 'utf-8');
+      return JSON.parse(data);
+  } catch (error) {
+      console.error(`Failed to read or parse the JSON file at ${filePath}:`, error.message);
+      return null;
+  }
 }
+
 
 async function readIndex() {
   const indexPath = './data/index.json';
@@ -21,15 +22,18 @@ async function readIndex() {
     const parsedData = JSON.parse(data);
 
     if (!Array.isArray(parsedData)){
+        console.error(`Index.json is not an array at ${indexPath}`);
         return [];
     }
 
     return parsedData;
 
-  } catch(error) {
-    return []
+  } catch (error) {
+    console.error(`Failed to read or parse the index file at ${indexPath}:`, error.message);
+    return [];
   }
 }
+
 
 async function readAll() {
     let parsedData = await readIndex();
