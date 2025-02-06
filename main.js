@@ -15,10 +15,8 @@ async function readJson(filePath) {
 async function readIndex() {
   const indexPath = './data/index.json';
   try {
-    // Read the file synchronously
     const data = await fs.readFile(indexPath, 'utf8');
 
-    // Parse the JSON content
     const parsedData = JSON.parse(data);
 
     if (!Array.isArray(parsedData)){
@@ -191,7 +189,6 @@ async function createIndex(indexJson) {
 
 async function createDist(dirPath) {
   try {
-    // Create the directory (will throw if it already exists)
     await fs.mkdir(dirPath, { recursive: true });
     console.log(`Directory "${dirPath}" created successfully.`);
   } catch (error) {
